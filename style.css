@@ -1,6 +1,7 @@
 /* 迭代1 · 风格：米黄色（Claude 风格）——暖米底 + 陶土色点缀 */
 /* 迭代2 · 布局：首屏突出姓名、区块留白统一 80px、项目卡片等高 */
 /* 迭代3 · 细节：卡片悬停上浮、导航当前区块高亮、胶囊标签、页脚署名 */
+/* 迭代4 · 响应式：窄屏单列堆叠、汉堡菜单、头像缩小 */
 :root {
   --bg: #f0eee6;          /* 主背景：暖米黄 */
   --surface: #faf9f5;     /* 卡片纸白 */
@@ -44,6 +45,24 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   justify-content: space-between;
 }
 .nav-brand { font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
+/* 汉堡按钮：默认隐藏，窄屏出现 */
+.nav-toggle {
+  display: none;
+  width: 40px;
+  height: 34px;
+  padding: 6px 8px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+  border-radius: 2px;
+  background: var(--ink);
+}
 .nav-links { display: flex; gap: 24px; font-size: 15px; }
 .nav-links a { color: var(--ink-soft); transition: color .18s ease; }
 .nav-links a:hover { color: var(--accent); text-decoration: none; }
@@ -194,3 +213,51 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .footer .sign { margin: 0; }
 .footer .sign span { color: var(--accent); }
+
+/* ============ 迭代4 · 响应式（宽度 375px 左右）============ */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }          /* 项目卡片单列堆叠 */
+  .hero {
+    flex-direction: column-reverse;               /* 头像在下，不遮挡文字 */
+    align-items: flex-start;
+    gap: 28px;
+    padding: 64px 24px 56px;
+  }
+  .section { padding: 56px 24px; }
+}
+
+@media (max-width: 720px) {
+  body { line-height: 1.75; }
+  h1, h2, h3, p, li, a { overflow-wrap: break-word; }   /* 长邮箱不溢出 */
+
+  .nav-inner { padding: 12px 20px; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 20px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-open .nav-links { display: flex; }
+  .nav-links a { padding: 8px 0; font-size: 15px; }
+  .nav-links a.active::after { display: none; }
+
+  .hero { padding: 48px 20px 40px; }
+  .hero h1 { font-size: 34px; }
+  .tagline { font-size: 16px; margin-bottom: 24px; }
+  .hero-actions { flex-wrap: wrap; }
+  .avatar { width: 96px; height: 96px; font-size: 32px; }
+
+  .section { padding: 48px 20px; }
+  .section h2 { font-size: 22px; margin-bottom: 20px; }
+  .card { padding: 20px; border-radius: 14px; }
+  .card p { font-size: 14.5px; }
+  .tags-lg li { font-size: 13px; padding: 6px 14px; }
+  .footer { padding: 22px 20px; font-size: 13px; }
+}
