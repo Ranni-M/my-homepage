@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学习笔记 | 阮耀辉</title>
+  <meta name="description" content="阮耀辉的学习笔记：AI 辅助开发流程、前端重构、localStorage 实践、GitHub Pages 部署踩坑、响应式适配。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">阮耀辉</a>
+      <nav class="nav-links">
+        <a href="index.html#education">教育背景</a>
+        <a href="index.html#projects">项目经历</a>
+        <a href="index.html#skills">技能</a>
+        <a href="projects.html">作品集</a>
+        <a href="notes.html" class="active">笔记</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <p class="breadcrumb"><a href="index.html">主页</a> / 学习笔记</p>
+      <h1>学习笔记</h1>
+      <p class="lead">写给自己的复盘，也写给下一个踩同样坑的人。5 篇，全部来自这半年真实做过的事。</p>
+    </div>
+
+    <section class="section">
+      <div class="grid-2">
+        <article class="card">
+          <span class="date meta">2026.04.12 · 工程习惯</span>
+          <h3>用 AI 生成首版后，我先删掉了一半样式</h3>
+          <p>AI 生成的页面「能看」，但那股默认味儿很重：通用蓝、通用圆角、通用阴影。第一版我直接拿来当成品，结果同学一眼就看出是模板。</p>
+          <ul class="plain">
+            <li>反过来做：先定三个变量——背景色、主色、正文色，其余颜色都由它们推。</li>
+            <li>删掉一半不必要的东西后再谈加法：去掉多余阴影、去掉渐变、统一圆角成两个档位。</li>
+            <li>每轮只改一类事，改完立刻在浏览器刷新验收，不满意就 git checkout 退回。</li>
+          </ul>
+          <ul class="tags"><li>提示词</li><li>设计变量</li><li>迭代流程</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="date meta">2026.03.28 · 前端</span>
+          <h3>从 300 行到 180 行：一次渲染逻辑重构</h3>
+          <p>记账本最初每加一条记录就往页面里 append 一个节点，记录一多，滚动明显发涩。</p>
+          <ul class="plain">
+            <li>问题定位：读一遍自己的代码，发现「读数据—拼 DOM—写页面」三步混在一个函数里。</li>
+            <li>改法：拆成「取数据 / 拼字符串 / 一次性写入」，再加一个 renderAll 统一入口。</li>
+            <li>顺手的收获：一次性写入天然支持空状态——没有记录时直接渲染一句「这周还没记账」。</li>
+            <li>教训：先让它能跑，再让它好读，最后才谈快。顺序反了会一直卡在细节里。</li>
+          </ul>
+          <ul class="tags"><li>重构</li><li>DOM</li><li>性能</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="date meta">2026.03.05 · 部署</span>
+          <h3>GitHub Pages 上线踩过的 5 个坑</h3>
+          <p>第一次把站点推上去，打开 URL 是一片空白，那一刻比写代码本身更让人上头。</p>
+          <ul class="plain">
+            <li>① 首屏空白：先看文件名大小写，<code>Index.html</code> 和 <code>index.html</code> 在 Pages 上是两个东西。</li>
+            <li>② 样式全丢：查 link 标签的 href 路径，能相对就别写绝对路径。</li>
+            <li>③ 图片不显示：图片必须在仓库内，本地磁盘绝对路径（D:\...）线上必然失效。</li>
+            <li>④ 404 延迟：首次发布要等 1–2 分钟，别急着改配置。</li>
+            <li>⑤ 分支选错：Source 要选 main + / (root)，改完记得 Save。</li>
+          </ul>
+          <ul class="tags"><li>GitHub Pages</li><li>部署</li><li>排查</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="date meta">2026.02.20 · 数据</span>
+          <h3>localStorage 到底能装多少？我压了一次</h3>
+          <p>记账本把数据全放在 localStorage，一次和同学聊天被问「存满了怎么办」，发现自己答不上来。</p>
+          <ul class="plain">
+            <li>实测：一条记录约 120 字节，几千条毫无压力；真正会先出问题的是写入频率，不是容量。</li>
+            <li>教训：每次操作都整体序列化再写回，短期没事，长期该做增量与节流。</li>
+            <li>所以加了「导出 JSON」按钮——数据在用户手里，比存在我这里更让人放心。</li>
+          </ul>
+          <ul class="tags"><li>localStorage</li><li>压测</li><li>数据备份</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="date meta">2026.01.15 · 响应式</span>
+          <h3>响应式不是加个媒体查询就完事</h3>
+          <p>把窗口拉窄才发现：字没溢出，但整个页面能左右滑动——一个看不见的横向滚动条。</p>
+          <ul class="plain">
+            <li>排查顺序：先找宽度写死的元素，再找 padding + 100% 宽度凑出来的溢出，最后才怀疑文字。</li>
+            <li>有用的两行：<code>overflow-wrap: break-word</code> 和把固定宽度换成 max-width。</li>
+            <li>验收标准定成「375px 下 scrollWidth 等于 innerWidth」，比「看着还行」靠谱得多。</li>
+            <li>顺带把导航改成汉堡菜单，窄屏终于不用挤六个字。</li>
+          </ul>
+          <ul class="tags"><li>响应式</li><li>媒体查询</li><li>移动端</li></ul>
+        </article>
+
+        <article class="card">
+          <span class="date meta">2025.12.08 · 方法</span>
+          <h3>我是怎么把 AI 当结对伙伴用的</h3>
+          <p>半年下来最大的体会：AI 最擅长的不是替我做决定，而是把我模糊的想法翻译成可执行的步骤。</p>
+          <ul class="plain">
+            <li>描述问题时用「区域 + 现状 + 期望」三句话，配上截图，比写十行长句有效。</li>
+            <li>让它解释代码，而不是只让它改代码——看懂之后再自己动手改一遍。</li>
+            <li>事实类内容（成绩、经历、链接）永远自己核对，AI 编得比谁都像真的。</li>
+            <li>每次改动都提交一次，改砸了随时退回，这才敢放心大胆试。</li>
+          </ul>
+          <ul class="tags"><li>AI 协作</li><li>提示词</li><li>版本控制</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>笔记里的项目都在作品集里</h2>
+          <p>想看每个项目具体做了什么、用什么方法、结果如何，直接翻作品集。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects.html">查看作品集</a>
+          <a class="btn btn-ghost" href="about.html">关于我</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h4>阮耀辉</h4>
+        <p>金陵科技学院 · 数字媒体技术</p>
+        <p>准全栈开发者 · 2029 届</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="index.html">主页</a></li>
+          <li><a href="projects.html">作品集</a></li>
+          <li><a href="notes.html">学习笔记</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系方式</h4>
+        <p><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
+        <p><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="sign"></p>
+      <p>第 3 次课实践作品 · HTML / CSS / JavaScript</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

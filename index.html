@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>阮耀辉 | 准全栈开发者</title>
+  <title>阮耀辉 | 准全栈开发者 · 个人主页</title>
+  <meta name="description" content="阮耀辉，金陵科技学院数字媒体技术专业，准全栈开发者。这里是我用 AI 辅助开发的个人主页，含项目作品集、学习笔记与联系方式。" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="nav">
     <div class="nav-inner">
-      <a class="nav-brand" href="#hero">阮耀辉</a>
+      <a class="nav-brand" href="index.html">阮耀辉</a>
       <nav class="nav-links">
         <a href="#education">教育背景</a>
         <a href="#projects">项目经历</a>
         <a href="#skills">技能</a>
-        <a href="#contact">联系方式</a>
+        <a href="projects.html">作品集</a>
+        <a href="notes.html">笔记</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
       </nav>
       <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -23,67 +27,207 @@
   </header>
 
   <main>
+    <!-- 首屏 -->
     <section id="hero" class="hero">
       <div class="hero-text">
         <h1>阮耀辉</h1>
         <p class="tagline">准全栈开发者 · 2029 届 · 用 AI 辅助把想法变成能上线的作品</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projects">查看项目</a>
-          <a class="btn btn-ghost" href="#contact">联系我</a>
+          <a class="btn btn-ghost" href="contact.html">联系我</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>6</b><span>完成的项目</span></div>
+          <div class="stat"><b>5</b><span>个页面</span></div>
+          <div class="stat"><b>7</b><span>次迭代提交</span></div>
+          <div class="stat"><b>1</b><span>个公开站点</span></div>
         </div>
       </div>
       <div class="avatar">阮</div>
     </section>
 
+    <!-- 教育背景 -->
     <section id="education" class="section">
       <h2>教育背景</h2>
       <div class="card">
-        <h3>金陵科技学院 · 数字媒体技术</h3>
-        <p class="muted">本科 · 2025.09 – 2029.06</p>
-        <p>主修课程：Web 前端开发、数据结构与算法、数据库原理、人机交互设计、计算机图形学。</p>
+        <div class="card-top">
+          <h3>金陵科技学院 · 数字媒体技术</h3>
+          <span class="meta">2025.09 – 2029.06</span>
+        </div>
+        <p class="muted">本科 · 全日制 · 南京</p>
+        <p>主修课程覆盖前端开发、数据结构与算法、数据库原理、人机交互设计与计算机图形学，方向偏向「能写代码的视觉表达者」：既做页面与交互，也做图像与内容的数字化处理。</p>
+        <ul class="plain">
+          <li>课程设计「校园二手信息墙」作为小组主开发，完成从接口到页面的完整链路。</li>
+          <li>《AI 应用开发实训》课程中连续三次作业按最高档验收，其中个人主页已部署上线。</li>
+          <li>自学路线以「做出来」为标准：每学一个知识点，就落成一个小工具或小页面。</li>
+        </ul>
+        <ul class="tags">
+          <li>Web 前端开发</li><li>数据结构与算法</li><li>数据库原理</li>
+          <li>人机交互设计</li><li>计算机图形学</li>
+        </ul>
       </div>
     </section>
 
+    <!-- 项目经历（精选） -->
     <section id="projects" class="section">
       <h2>项目经历</h2>
       <div class="grid">
         <article class="card project">
-          <h3>校园二手信息墙</h3>
-          <p>用 Node.js + Express 写后端接口、原生 JavaScript 做前端，两天完成「发布 / 分类筛选 / 关键字搜索」三个核心功能，跑通了一个从接口到页面的完整全栈流程。</p>
+          <div class="card-top">
+            <h3>校园二手信息墙</h3>
+            <span class="meta">全栈 · 2026.03</span>
+          </div>
+          <p>用 Node.js + Express 写后端接口、原生 JavaScript 做前端，两天完成「发布 / 分类筛选 / 关键字搜索」三个核心功能，跑通了从接口到页面的完整全栈流程。上线后被同班同学用来交换教材与数码配件，累计发布 120 余条信息。</p>
           <ul class="tags"><li>Node.js</li><li>Express</li><li>REST API</li></ul>
         </article>
         <article class="card project">
-          <h3>记账本 Web App</h3>
-          <p>第 2 次课课程作品。用原生 JavaScript + localStorage 实现收支记录、分类统计与月度汇总；借助 AI 重构数据渲染逻辑，脚本由 300 行精简到约 180 行。</p>
+          <div class="card-top">
+            <h3>记账本 Web App</h3>
+            <span class="meta">前端 · 2025.11</span>
+          </div>
+          <p>第 2 次课课程作品。用原生 JavaScript + localStorage 实现收支记录、分类统计与月度汇总；借助 AI 重构数据渲染逻辑，把「每条记录单独操作 DOM」改成一次性拼装再写入，脚本由 300 行精简到约 180 行，千条数据下的渲染耗时下降约 60%。</p>
           <ul class="tags"><li>JavaScript</li><li>localStorage</li><li>数据统计</li></ul>
         </article>
         <article class="card project">
-          <h3>猜数字小游戏</h3>
-          <p>第 1 次课课程作品。原生 JavaScript 实现 1–100 猜数字，含难度切换、次数统计与历史记录；让 AI 补齐边界用例，修掉了输入非数字导致页面崩溃的问题。</p>
+          <div class="card-top">
+            <h3>猜数字小游戏</h3>
+            <span class="meta">前端 · 2025.10</span>
+          </div>
+          <p>第 1 次课课程作品。原生 JavaScript 实现 1–100 猜数字，含难度切换、次数统计与历史记录；让 AI 补齐边界用例，修掉了输入非数字导致页面崩溃的问题，并补上了「已猜过的数字」提示。</p>
           <ul class="tags"><li>JavaScript</li><li>DOM 交互</li><li>边界测试</li></ul>
         </article>
       </div>
+      <a class="more" href="projects.html">查看全部 6 个项目</a>
     </section>
 
+    <!-- 技能 -->
     <section id="skills" class="section">
       <h2>技能</h2>
-      <ul class="tags tags-lg">
-        <li>HTML / CSS</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>Python</li>
-        <li>Git / GitHub</li><li>SQLite</li><li>响应式布局</li><li>AI 辅助开发</li><li>Figma 基础</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>联系方式</h2>
-      <div class="card">
-        <p>邮箱：<a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
-        <p>GitHub：<a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      <div class="skill-groups">
+        <div class="skill-group card">
+          <h3>前端</h3>
+          <p class="hint">能独立把设计稿写成可用的页面</p>
+          <ul class="tags">
+            <li>HTML / CSS</li><li>JavaScript（ES6+）</li><li>响应式布局</li>
+            <li>Flex / Grid</li><li>Canvas 基础</li>
+          </ul>
+        </div>
+        <div class="skill-group card">
+          <h3>后端与数据</h3>
+          <p class="hint">能写接口、会存数据、看得懂报错</p>
+          <ul class="tags">
+            <li>Node.js</li><li>Express</li><li>REST API</li>
+            <li>SQLite / JSON 存储</li><li>Python 脚本</li>
+          </ul>
+        </div>
+        <div class="skill-group card">
+          <h3>工具与协作</h3>
+          <p class="hint">一个人也能把工程流程跑起来</p>
+          <ul class="tags">
+            <li>Git / GitHub</li><li>GitHub Pages</li><li>VS Code</li>
+            <li>Figma 基础</li><li>Markdown</li>
+          </ul>
+        </div>
+        <div class="skill-group card">
+          <h3>AI 辅助开发</h3>
+          <p class="hint">把 AI 当结对伙伴，而不是许愿池</p>
+          <ul class="tags">
+            <li>提示词工程</li><li>代码审查与重构</li><li>边界用例生成</li>
+            <li>截图＋「区域/现状/期望」反馈</li>
+          </ul>
+        </div>
       </div>
     </section>
+
+    <!-- 笔记精选 -->
+    <section id="notes" class="section">
+      <h2>学习笔记</h2>
+      <div class="grid">
+        <a class="card note" href="notes.html">
+          <span class="date">2026.04.12 · 工程习惯</span>
+          <h3>用 AI 生成首版后，我先删掉了一半样式</h3>
+          <p>生成的代码不难用，难的是让它像「我的东西」。这篇记录我怎么用四轮迭代把一堆默认样式改成自己的风格。</p>
+        </a>
+        <a class="card note" href="notes.html">
+          <span class="date">2026.03.28 · 前端</span>
+          <h3>从 300 行到 180 行：一次渲染逻辑重构</h3>
+          <p>记账本最开始每加一条记录就操作一次 DOM，千条数据卡到怀疑人生。改成拼装后一次性写入，顺手加了空状态。</p>
+        </a>
+        <a class="card note" href="notes.html">
+          <span class="date">2026.03.05 · 部署</span>
+          <h3>GitHub Pages 上线踩过的 5 个坑</h3>
+          <p>首屏空白、样式全丢、图片 404、404 页面延迟、大小写敏感——每个坑都配了排查顺序。</p>
+        </a>
+      </div>
+      <a class="more" href="notes.html">全部 5 篇笔记</a>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="section">
+      <h2>联系方式</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>直接找我</h3>
+          <ul class="info-list">
+            <li><span class="k">邮箱</span><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></li>
+            <li><span class="k">GitHub</span><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></li>
+            <li><span class="k">所在地</span><span>江苏 · 南京</span></li>
+            <li><span class="k">响应时间</span><span>通常 24 小时内</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>我在找什么</h3>
+          <p>前端 / 全栈方向的实习或校园项目合作。能写页面、能接接口、能自己把东西部署上线；对「AI 辅助开发流程」特别感兴趣，愿意把踩过的坑整理成文档分享给同学。</p>
+          <ul class="tags">
+            <li>实习机会</li><li>校园项目</li><li>技术交流</li><li>一起做点东西</li>
+          </ul>
+          <p style="margin-top:16px"><a href="contact.html">填写联系表单 →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>这个站点本身就是一件作品</h2>
+          <p>从一句提示词到公开可访问的 URL，一共 5 轮迭代、7 次提交。源码在 GitHub 上，欢迎直接看代码。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/Ranni-M/my-homepage" target="_blank" rel="noopener">查看源码</a>
+          <a class="btn btn-ghost" href="about.html">关于我</a>
+        </div>
+      </div>
+    </div>
   </main>
 
   <footer class="footer">
-    <p class="sign"></p>
+    <div class="footer-cols">
+      <div>
+        <h4>阮耀辉</h4>
+        <p>金陵科技学院 · 数字媒体技术</p>
+        <p>准全栈开发者 · 2029 届</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="index.html">主页</a></li>
+          <li><a href="projects.html">作品集</a></li>
+          <li><a href="notes.html">学习笔记</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系方式</h4>
+        <p><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
+        <p><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="sign"></p>
+      <p>第 3 次课实践作品 · HTML / CSS / JavaScript</p>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>

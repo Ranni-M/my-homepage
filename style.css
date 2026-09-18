@@ -101,7 +101,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .hero {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 96px 28px 80px;
+  padding: 88px 28px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -260,4 +260,204 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   .card p { font-size: 14.5px; }
   .tags-lg li { font-size: 13px; padding: 6px 14px; }
   .footer { padding: 22px 20px; font-size: 13px; }
+}
+
+/* ============ 迭代5 · 内容丰富化 + 多子页面 ============ */
+/* 页脚改为多列 */
+.footer { text-align: left; padding: 48px 28px 28px; }
+.footer-cols {
+  max-width: 1040px;
+  margin: 0 auto 28px;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.2fr;
+  gap: 32px;
+}
+.footer-cols h4 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+.footer-cols p, .footer-cols li { font-size: 14px; margin: 0 0 6px; color: var(--ink-soft); }
+.footer-cols ul { list-style: none; padding: 0; margin: 0; }
+.footer-cols a { color: var(--ink-soft); }
+.footer-cols a:hover { color: var(--accent); }
+.footer-bottom {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.footer .sign { margin: 0; }
+.footer .sign span { color: var(--accent); }
+
+/* 数据条 */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 34px;
+  max-width: 640px;
+}
+.stat { border-left: 2px solid var(--accent-soft); padding-left: 14px; }
+.stat b { display: block; font-size: 26px; letter-spacing: -0.02em; }
+.stat span { font-size: 13px; color: var(--ink-soft); }
+
+/* 子页面头部 */
+.page-head {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 28px 8px;
+}
+.breadcrumb { font-size: 13px; color: var(--ink-soft); margin: 0 0 14px; }
+.breadcrumb a { color: var(--ink-soft); }
+.page-head h1 { font-size: 40px; margin: 0 0 12px; letter-spacing: -0.03em; }
+.page-head p.lead { color: var(--ink-soft); font-size: 17px; margin: 0; max-width: 720px; }
+
+/* 卡片网格：两列 / 四列 */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+
+/* 卡片内的小标签（角色 / 年份） */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.card-top h3 { margin: 0; }
+.meta { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  border: 1px solid #e8d3c8;
+  color: #8f4a2b;
+  background: #fbf1ec;
+}
+.card ul.plain { margin: 12px 0 0; padding-left: 18px; color: #3a3a35; font-size: 14.5px; }
+.card ul.plain li { margin-bottom: 4px; }
+
+/* 更多链接 */
+.more { display: inline-block; margin-top: 24px; font-size: 15px; }
+.more::after { content: " →"; }
+
+/* 技能分组 */
+.skill-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.skill-group .tags { margin-top: 0; }
+.skill-group h3 { margin: 0 0 4px; font-size: 16px; }
+.skill-group p.hint { margin: 0; font-size: 13px; color: var(--ink-soft); }
+
+/* 时间线 */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 26px; border-left: 1px solid var(--line); }
+.timeline li { position: relative; padding: 0 0 26px 4px; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+.timeline .when { font-size: 13px; color: var(--ink-soft); }
+.timeline h3 { margin: 2px 0 4px; font-size: 17px; }
+.timeline p { margin: 0; color: #3a3a35; font-size: 15px; }
+
+/* 笔记列表 */
+.note { display: block; }
+.note .date { font-size: 13px; color: var(--ink-soft); }
+.note h3 { margin: 6px 0 8px; }
+.note p { color: #3a3a35; font-size: 15px; }
+.note:hover { text-decoration: none; }
+.note:hover h3 { color: var(--accent); }
+
+/* CTA 区块 */
+.cta {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 28px 80px;
+}
+.cta-inner {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 36px 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+.cta-inner h2 { margin: 0 0 8px; font-size: 24px; }
+.cta-inner p { margin: 0; color: var(--ink-soft); }
+
+/* 表单 */
+.form { display: grid; gap: 16px; }
+.form label { font-size: 14px; color: var(--ink); display: block; margin-bottom: 6px; }
+.form input, .form textarea, .form select {
+  width: 100%;
+  padding: 11px 14px;
+  font: inherit;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.form input:focus, .form textarea:focus, .form select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.12);
+}
+.form textarea { min-height: 130px; resize: vertical; }
+.form-note { font-size: 13px; color: var(--ink-soft); }
+.form-ok {
+  display: none;
+  margin-top: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #f2ece1;
+  border: 1px solid #e8d3c8;
+  font-size: 14px;
+}
+.form-ok.show { display: block; }
+
+/* 联系信息列表 */
+.info-list { list-style: none; padding: 0; margin: 0; }
+.info-list li {
+  padding: 14px 0;
+  border-bottom: 1px dashed var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 15px;
+}
+.info-list li:last-child { border-bottom: none; }
+.info-list .k { color: var(--ink-soft); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .grid-2, .grid-4, .skill-groups, .footer-cols { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px) {
+  .page-head { padding: 36px 20px 0; }
+  .page-head h1 { font-size: 30px; }
+  .page-head p.lead { font-size: 16px; }
+  .cta { padding: 0 20px 56px; }
+  .cta-inner { padding: 26px 22px; }
+  .cta-inner h2 { font-size: 20px; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .stat b { font-size: 22px; }
+  .footer { padding: 36px 20px 24px; }
+  .footer-bottom { flex-direction: column; }
 }

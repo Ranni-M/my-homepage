@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>联系我 | 阮耀辉</title>
+  <meta name="description" content="联系阮耀辉：邮箱、GitHub 与留言表单。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">阮耀辉</a>
+      <nav class="nav-links">
+        <a href="index.html#education">教育背景</a>
+        <a href="index.html#projects">项目经历</a>
+        <a href="index.html#skills">技能</a>
+        <a href="projects.html">作品集</a>
+        <a href="notes.html">笔记</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html" class="active">联系</a>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <p class="breadcrumb"><a href="index.html">主页</a> / 联系</p>
+      <h1>联系我</h1>
+      <p class="lead">实习、校园项目、技术交流都欢迎。邮件我基本当天看，最迟 24 小时内回复。</p>
+    </div>
+
+    <section class="section">
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <h3>联系方式</h3>
+            <ul class="info-list">
+              <li><span class="k">邮箱</span><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></li>
+              <li><span class="k">GitHub</span><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></li>
+              <li><span class="k">所在地</span><span>江苏 · 南京</span></li>
+              <li><span class="k">可投入时间</span><span>周末与工作日晚间</span></li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-top:20px">
+            <h3>常见问题</h3>
+            <ul class="plain">
+              <li><b>能接什么活？</b>静态页面还原、小工具、数据整理脚本、活动物料批处理，都可以先聊需求。</li>
+              <li><b>会不会写后端？</b>能写简单接口与数据读写（Node.js / Express、JSON 或 SQLite），复杂业务还在学。</li>
+              <li><b>用什么方式协作？</b>GitHub 仓库 + 分支提交，或直接按你习惯的流程来。</li>
+              <li><b>这个站点怎么做的？</b>AI 生成首版 + 5 轮人工迭代，源码公开可查。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>给我留言</h3>
+            <p class="muted">填完点「发送留言」，会用你本机的邮件客户端带上内容发到我邮箱（静态站点没有后端，这样最省事）。</p>
+            <form id="contact-form" class="form" novalidate>
+              <div>
+                <label for="name">你的称呼</label>
+                <input id="name" name="name" type="text" placeholder="如：李老师 / 王同学" autocomplete="name" />
+              </div>
+              <div>
+                <label for="email">你的邮箱</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+              </div>
+              <div>
+                <label for="topic">主题</label>
+                <select id="topic" name="topic">
+                  <option>实习机会</option>
+                  <option>校园项目合作</option>
+                  <option>技术交流</option>
+                  <option>网站问题反馈</option>
+                  <option>其他</option>
+                </select>
+              </div>
+              <div>
+                <label for="message">留言内容</label>
+                <textarea id="message" name="message" placeholder="简单说下需求、时间安排和期望的成果，我回复会更快。"></textarea>
+              </div>
+              <div>
+                <button class="btn btn-primary" type="submit">发送留言</button>
+              </div>
+              <p class="form-note">提示：这个表单不会把数据存到任何服务器，只负责打开你的邮件客户端。</p>
+              <div class="form-ok"></div>
+            </form>
+          </div>
+
+          <div class="card" style="margin-top:20px">
+            <h3>关于本站</h3>
+            <ul class="info-list">
+              <li><span class="k">技术栈</span><span>HTML + CSS + 原生 JavaScript</span></li>
+              <li><span class="k">页面数</span><span>5 个（主页 / 作品集 / 笔记 / 关于 / 联系）</span></li>
+              <li><span class="k">开发方式</span><span>AI 生成首版 + 5 轮迭代</span></li>
+              <li><span class="k">托管</span><span>GitHub Pages（免费、HTTPS）</span></li>
+              <li><span class="k">仓库</span><a href="https://github.com/Ranni-M/my-homepage" target="_blank" rel="noopener">Ranni-M/my-homepage</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>先看看我做过什么？</h2>
+          <p>6 个项目、5 篇笔记，大概比自我介绍更能说明问题。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="projects.html">作品集</a>
+          <a class="btn btn-ghost" href="index.html">回主页</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h4>阮耀辉</h4>
+        <p>金陵科技学院 · 数字媒体技术</p>
+        <p>准全栈开发者 · 2029 届</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="index.html">主页</a></li>
+          <li><a href="projects.html">作品集</a></li>
+          <li><a href="notes.html">学习笔记</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系方式</h4>
+        <p><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
+        <p><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="sign"></p>
+      <p>第 3 次课实践作品 · HTML / CSS / JavaScript</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我 | 阮耀辉</title>
+  <meta name="description" content="关于阮耀辉：学习时间线、技能构成、日常工具链与接下来的计划。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">阮耀辉</a>
+      <nav class="nav-links">
+        <a href="index.html#education">教育背景</a>
+        <a href="index.html#projects">项目经历</a>
+        <a href="index.html#skills">技能</a>
+        <a href="projects.html">作品集</a>
+        <a href="notes.html">笔记</a>
+        <a href="about.html" class="active">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <p class="breadcrumb"><a href="index.html">主页</a> / 关于我</p>
+      <h1>关于我</h1>
+      <p class="lead">数字媒体技术专业大一在读，方向选全栈。喜欢「做出来」的感觉：一个想法从脑子里到浏览器里能打开，中间那段路是我最有耐心的部分。</p>
+    </div>
+
+    <section class="section">
+      <h2>我这一年在做什么</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p>我是阮耀辉，金陵科技学院数字媒体技术专业 2025 级学生。选这个专业的原因是它同时踩在教学和设计两边：既要写代码，也要处理图像、视频和交互。写页面的时候我会顺手想「这个字距看着舒服吗」，做海报的时候又会想「这块能不能用代码批量生成」。</p>
+          <p style="margin-top:14px">学技术的方式比较笨：不追求学完再动手，而是想做什么就先动手，缺什么补什么。半年来把前端基础、Git 工作流、Node.js 接口和 Python 小脚本都摸了一遍，最大的收获不是某个语法，而是知道遇到不会的东西时该按什么顺序查。</p>
+          <p style="margin-top:14px">现在最感兴趣的是「AI 辅助开发流程」本身：怎么把模糊需求拆成 AI 能接住的提示，怎么验收它给的结果，怎么在它写砸的时候快速退回上一步。</p>
+          <ul class="tags">
+            <li>全栈方向</li><li>AI 辅助开发</li><li>数字媒体</li><li>动手优先</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>日常工具链</h3>
+          <ul class="info-list">
+            <li><span class="k">编辑器</span><span>VS Code</span></li>
+            <li><span class="k">AI 协作</span><span>对话式编码助手（生成 + 审查）</span></li>
+            <li><span class="k">版本管理</span><span>Git + GitHub</span></li>
+            <li><span class="k">设计</span><span>Figma（基础）、Pillow、Canvas</span></li>
+            <li><span class="k">运行环境</span><span>Node.js、Python、浏览器 DevTools</span></li>
+            <li><span class="k">部署</span><span>GitHub Pages</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>学习时间线</h2>
+      <ul class="timeline">
+        <li>
+          <span class="when">2025.09</span>
+          <h3>入学 · 数字媒体技术</h3>
+          <p>第一学期接触 HTML 与 CSS，写出第一个静态页面，知道了「盒子模型」不是玄学。</p>
+        </li>
+        <li>
+          <span class="when">2025.10</span>
+          <h3>第 1 次课 · 猜数字小游戏</h3>
+          <p>第一次用 AI 辅助写完整的 JavaScript 程序，学会了让 AI 帮忙列边界用例，也第一次见识到「输入非数字就崩」这种低级但致命的 bug。</p>
+        </li>
+        <li>
+          <span class="when">2025.11</span>
+          <h3>第 2 次课 · 记账本 Web App</h3>
+          <p>开始用 localStorage 存数据，第一次做数据统计；也是在这次完成了第一次代码重构（300 行 → 180 行）。</p>
+        </li>
+        <li>
+          <span class="when">2025.12 – 2026.02</span>
+          <h3>自学 Node.js 与 Python 脚本</h3>
+          <p>写出校园二手信息墙的接口部分；顺手用 Python + Pillow 给社团做了封面批处理脚本，第一次感受到「代码能省下真实时间」。</p>
+        </li>
+        <li>
+          <span class="when">2026.03</span>
+          <h3>把项目跑在 Git 上</h3>
+          <p>养成「每完成一件小事就提交一次」的习惯，学会了看 git log 判断自己这两天到底干了什么。</p>
+        </li>
+        <li>
+          <span class="when">2026.04</span>
+          <h3>第 3 次课 · 个人主页上线</h3>
+          <p>从一句提示词生成首版，5 轮迭代形成自己的风格，多页面结构 + 响应式，最后部署到 GitHub Pages 拿到公开 URL。</p>
+        </li>
+        <li>
+          <span class="when">接下来</span>
+          <h3>计划</h3>
+          <p>补齐 JavaScript 进阶（异步、模块化）与数据库基础，做一个需要真实登录和数据持久化的完整项目；同时把笔记整理成可检索的站点。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>能力自评</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>做得比较顺的</h3>
+          <ul class="plain">
+            <li>把设计稿或参考站点还原成响应式页面，桌面/移动两端都能验收通过。</li>
+            <li>用「区域 + 现状 + 期望」的方式跟 AI 沟通，能快速收敛到想要的样式。</li>
+            <li>主动排查问题：从报错信息、DevTools 到二分法定位，不太容易卡死在一个点上。</li>
+            <li>把过程写下来——笔记里的踩坑记录基本都是当天写的。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>还在补的</h3>
+          <ul class="plain">
+            <li>JavaScript 深层机制：原型链、事件循环这些概念还停留在「会用」的层面。</li>
+            <li>数据库：只在课程里用过 SQLite，复杂查询和索引还没实战过。</li>
+            <li>多人协作：目前项目基本是一个人做，Pull Request 流程只跑通过两次。</li>
+            <li>性能优化：知道要看 DevTools 的 Performance 面板，但看得还不够懂。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>如果你也在做类似的事</h2>
+          <p>欢迎交流 AI 辅助开发的经验，或者一起做点小项目。我现在最缺的是真实需求。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="contact.html">联系我</a>
+          <a class="btn btn-ghost" href="notes.html">看看笔记</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h4>阮耀辉</h4>
+        <p>金陵科技学院 · 数字媒体技术</p>
+        <p>准全栈开发者 · 2029 届</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="index.html">主页</a></li>
+          <li><a href="projects.html">作品集</a></li>
+          <li><a href="notes.html">学习笔记</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系方式</h4>
+        <p><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
+        <p><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="sign"></p>
+      <p>第 3 次课实践作品 · HTML / CSS / JavaScript</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

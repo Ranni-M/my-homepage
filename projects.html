@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品集 | 阮耀辉</title>
+  <meta name="description" content="阮耀辉的项目作品集：校园二手信息墙、记账本 Web App、猜数字游戏、短视频封面批处理、海报生成器、课程作业批改助手。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">阮耀辉</a>
+      <nav class="nav-links">
+        <a href="index.html#education">教育背景</a>
+        <a href="index.html#projects">项目经历</a>
+        <a href="index.html#skills">技能</a>
+        <a href="projects.html" class="active">作品集</a>
+        <a href="notes.html">笔记</a>
+        <a href="about.html">关于</a>
+        <a href="contact.html">联系</a>
+      </nav>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <p class="breadcrumb"><a href="index.html">主页</a> / 作品集</p>
+      <h1>作品集</h1>
+      <p class="lead">6 个项目，从课程作品到自娱自乐的小工具。每一个都能说明一件事：我从中学到了什么，以及它在什么场景下真的被用上了。</p>
+    </div>
+
+    <section class="section">
+      <h2>课程与团队项目</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-top">
+            <h3>校园二手信息墙</h3>
+            <span class="meta">2026.03 · 全栈</span>
+          </div>
+          <p>面向校内同学的信息发布墙：发布、分类筛选、关键字搜索、图片可选上传。用 Node.js + Express 提供接口，前端用原生 JavaScript 渲染列表，数据存 JSON 文件。</p>
+          <ul class="plain">
+            <li>做了什么：从接口设计到页面渲染整条链路，独立完成前端与 60% 的后端。</li>
+            <li>用什么方法：先和同学手画信息结构图，再让 AI 生成接口骨架，自己补参数校验。</li>
+            <li>结果如何：上线两周累计发布 120 余条信息；一次关键词搜索从 400ms 优化到 60ms（先按分类过滤再模糊匹配）。</li>
+          </ul>
+          <ul class="tags"><li>Node.js</li><li>Express</li><li>REST API</li><li>JSON 存储</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>记账本 Web App</h3>
+            <span class="meta">2025.11 · 前端</span>
+          </div>
+          <p>第 2 次课课程作品。收支记录 + 分类统计 + 月度汇总，数据存在浏览器 localStorage 里，关掉页面也不丢。</p>
+          <ul class="plain">
+            <li>做了什么：记录增删改查、分类占比条、月份切换、空状态提示。</li>
+            <li>用什么方法：让 AI 把「逐条操作 DOM」重构成「一次性拼装字符串再写入」，并补了输入校验。</li>
+            <li>结果如何：脚本从约 300 行降到约 180 行；1000 条记录下的渲染耗时下降约 60%。</li>
+          </ul>
+          <ul class="tags"><li>JavaScript</li><li>localStorage</li><li>数据统计</li><li>重构</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>猜数字小游戏</h3>
+            <span class="meta">2025.10 · 前端</span>
+          </div>
+          <p>第 1 次课课程作品。1–100 猜数字，含难度切换（3 个区间）、次数统计、历史记录与「已猜过」提示。</p>
+          <ul class="plain">
+            <li>做了什么：完整游戏逻辑 + 交互反馈 + 键盘回车提交。</li>
+            <li>用什么方法：写完先让 AI 列边界用例（空输入、负数、超范围、重复数字），逐条验证。</li>
+            <li>结果如何：修掉了「输入非数字页面崩溃」的问题，把提示文案从「输入无效」改成「请输入 1–100 之间的整数」。</li>
+          </ul>
+          <ul class="tags"><li>JavaScript</li><li>DOM 交互</li><li>边界测试</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>个人主页（本页所在站点）</h3>
+            <span class="meta">2026.04 · 全栈</span>
+          </div>
+          <p>第 3 次课实践作品。用一句提示词生成首版结构，再经 5 轮迭代形成米黄色风格的多页面站点，最后部署到 GitHub Pages。</p>
+          <ul class="plain">
+            <li>做了什么：单页 → 5 个页面（主页 / 作品集 / 笔记 / 关于 / 联系）；导航锚点、滚动高亮、悬停动效、移动端汉堡菜单。</li>
+            <li>用什么方法：每轮只改一类事（风格 / 布局 / 细节 / 响应式 / 内容），改完刷新验收再提交。</li>
+            <li>结果如何：移动端 375px 无横向滚动；7 次提交记录完整，公开 URL 可直接访问。</li>
+          </ul>
+          <ul class="tags"><li>HTML/CSS</li><li>JavaScript</li><li>GitHub Pages</li><li>响应式</li></ul>
+        </article>
+      </div>
+
+      <h2 style="margin-top:56px">自学的工具类小项目</h2>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-top">
+            <h3>短视频封面批处理脚本</h3>
+            <span class="meta">2026.02 · Python</span>
+          </div>
+          <p>帮社团剪视频时写的小工具：批量给封面加统一的标题条、圆角与序号，一次处理整个文件夹。</p>
+          <ul class="plain">
+            <li>用什么方法：Python + Pillow，读取文件名当标题，按模板定位文字区域。</li>
+            <li>结果如何：一次活动 48 张封面从手工 2 小时缩短到 15 秒；中文换行按像素宽度计算，避免标题溢出。</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>Pillow</li><li>批处理</li><li>数字媒体</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>校园活动海报生成器</h3>
+            <span class="meta">2026.01 · Canvas</span>
+          </div>
+          <p>在浏览器里填活动名称、时间、地点，实时预览海报并导出 PNG，内置 3 套版式。</p>
+          <ul class="plain">
+            <li>用什么方法：Canvas API 绘制 + 表单双向绑定，导出用 toDataURL 生成下载链接。</li>
+            <li>结果如何：把「用修图软件改字」的流程变成 30 秒；版式参数全部抽成配置对象，加新版式不用改绘制逻辑。</li>
+          </ul>
+          <ul class="tags"><li>Canvas</li><li>HTML/CSS</li><li>导出图片</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>课程作业批改助手</h3>
+            <span class="meta">2025.12 · Python + AI</span>
+          </div>
+          <p>给班里整理作业时写的半自动工具：读入学生提交的压缩包，检查文件命名与必需文件，生成一份核对清单。</p>
+          <ul class="plain">
+            <li>用什么方法：Python 解压与遍历 + 规则校验，再用大模型接口对代码做一次「可疑写法」提示。</li>
+            <li>结果如何：40 份作业的初筛从 40 分钟变成 3 分钟，人工只负责确认与打分。</li>
+          </ul>
+          <ul class="tags"><li>Python</li><li>自动化</li><li>AI 接口</li></ul>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <h3>静态笔记站生成脚本</h3>
+            <span class="meta">2026.03 · Node.js</span>
+          </div>
+          <p>把 Markdown 笔记批量转成带目录和样式的 HTML 页面，输出目录可直接丢到 GitHub Pages。</p>
+          <ul class="plain">
+            <li>用什么方法：Node.js 读文件 + 极简 Markdown 解析，模板字符串拼页面。</li>
+            <li>结果如何：现在写笔记只用管 .md 文件；顺手学会了 fs/path 模块和路径拼接的坑（Windows 反斜杠）。</li>
+          </ul>
+          <ul class="tags"><li>Node.js</li><li>Markdown</li><li>fs 模块</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <div class="cta">
+      <div class="cta-inner">
+        <div>
+          <h2>想看看代码或过程记录？</h2>
+          <p>主页站点源码在 GitHub；每个项目的踩坑过程写在「学习笔记」里。</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/Ranni-M/my-homepage" target="_blank" rel="noopener">GitHub 源码</a>
+          <a class="btn btn-ghost" href="notes.html">看笔记</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div>
+        <h4>阮耀辉</h4>
+        <p>金陵科技学院 · 数字媒体技术</p>
+        <p>准全栈开发者 · 2029 届</p>
+      </div>
+      <div>
+        <h4>页面</h4>
+        <ul>
+          <li><a href="index.html">主页</a></li>
+          <li><a href="projects.html">作品集</a></li>
+          <li><a href="notes.html">学习笔记</a></li>
+          <li><a href="about.html">关于我</a></li>
+          <li><a href="contact.html">联系</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系方式</h4>
+        <p><a href="mailto:irl852ley@outlook.com">irl852ley@outlook.com</a></p>
+        <p><a href="https://github.com/Ranni-M" target="_blank" rel="noopener">github.com/Ranni-M</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="sign"></p>
+      <p>第 3 次课实践作品 · HTML / CSS / JavaScript</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
