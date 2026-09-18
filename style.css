@@ -1,4 +1,5 @@
 /* 迭代1 · 风格：米黄色（Claude 风格）——暖米底 + 陶土色点缀 */
+/* 迭代2 · 布局：首屏突出姓名、区块留白统一 80px、项目卡片等高 */
 :root {
   --bg: #f0eee6;          /* 主背景：暖米黄 */
   --surface: #faf9f5;     /* 卡片纸白 */
@@ -46,40 +47,42 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .nav-links a { color: var(--ink-soft); }
 .nav-links a:hover { color: var(--accent); text-decoration: none; }
 
-/* 通用容器 */
+/* 通用容器：各区块上下留白统一为 80px */
 .section {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 56px 28px;
+  padding: 80px 28px;
+  scroll-margin-top: 76px;   /* 锚点跳转不被固定导航遮挡 */
 }
 .section h2 {
   font-size: 26px;
-  margin: 0 0 24px;
+  margin: 0 0 28px;
   letter-spacing: -0.01em;
   font-weight: 700;
 }
 
-/* 首屏 */
+/* 首屏：姓名与定位放大居左，头像居右 */
 .hero {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 72px 28px 56px;
+  padding: 96px 28px 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 48px;
 }
+.hero-text { max-width: 640px; }
 .hero h1 {
-  font-size: 44px;
-  line-height: 1.2;
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
+  font-size: 56px;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
   font-weight: 700;
 }
 .tagline {
   color: var(--ink-soft);
-  font-size: 17px;
-  margin: 0 0 28px;
+  font-size: 19px;
+  margin: 0 0 32px;
 }
 .hero-actions { display: flex; gap: 12px; }
 
@@ -126,11 +129,18 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .muted { color: var(--ink-soft); font-size: 14px; margin: 0 0 10px; }
 .card p { margin: 0; color: #3a3a35; font-size: 15px; }
 
+/* 桌面端项目卡片一行三列、等高 */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  align-items: stretch;
 }
+.project {
+  display: flex;
+  flex-direction: column;
+}
+.project .tags { margin-top: auto; padding-top: 16px; }
 
 /* 标签 */
 .tags {
