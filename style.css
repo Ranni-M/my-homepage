@@ -1,5 +1,6 @@
 /* 迭代1 · 风格：米黄色（Claude 风格）——暖米底 + 陶土色点缀 */
 /* 迭代2 · 布局：首屏突出姓名、区块留白统一 80px、项目卡片等高 */
+/* 迭代3 · 细节：卡片悬停上浮、导航当前区块高亮、胶囊标签、页脚署名 */
 :root {
   --bg: #f0eee6;          /* 主背景：暖米黄 */
   --surface: #faf9f5;     /* 卡片纸白 */
@@ -44,8 +45,24 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .nav-brand { font-weight: 700; color: var(--ink); letter-spacing: 0.02em; }
 .nav-links { display: flex; gap: 24px; font-size: 15px; }
-.nav-links a { color: var(--ink-soft); }
+.nav-links a { color: var(--ink-soft); transition: color .18s ease; }
 .nav-links a:hover { color: var(--accent); text-decoration: none; }
+/* 导航当前所在区块高亮 */
+.nav-links a.active {
+  color: var(--accent);
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+}
 
 /* 通用容器：各区块上下留白统一为 80px */
 .section {
@@ -118,12 +135,18 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border: 1px solid #e8d3c8;
 }
 
-/* 卡片 */
+/* 卡片：悬停轻微上浮 + 阴影 */
 .card {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 24px 26px;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(60, 45, 30, 0.10);
+  border-color: #e0d3c6;
 }
 .card h3 { margin: 0 0 8px; font-size: 18px; letter-spacing: -0.01em; }
 .muted { color: var(--ink-soft); font-size: 14px; margin: 0 0 10px; }
@@ -142,7 +165,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 .project .tags { margin-top: auto; padding-top: 16px; }
 
-/* 标签 */
+/* 标签：统一胶囊样式 */
 .tags {
   list-style: none;
   padding: 0;
@@ -154,11 +177,13 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .tags li {
   background: var(--accent-soft);
   color: #8f4a2b;
-  border-radius: 8px;
-  padding: 3px 10px;
+  border: 1px solid #ecd7cb;
+  border-radius: 999px;
+  padding: 3px 13px;
   font-size: 13px;
+  line-height: 1.6;
 }
-.tags-lg li { font-size: 14px; padding: 7px 15px; border-radius: 10px; }
+.tags-lg li { font-size: 14px; padding: 7px 17px; }
 
 .footer {
   border-top: 1px solid var(--line);
@@ -167,3 +192,5 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   color: var(--ink-soft);
   font-size: 14px;
 }
+.footer .sign { margin: 0; }
+.footer .sign span { color: var(--accent); }
