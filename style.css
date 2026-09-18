@@ -1,0 +1,120 @@
+/* 首版：结构完整的基础样式（占位内容阶段） */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #1f2933;
+  background: #ffffff;
+  line-height: 1.7;
+}
+
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 顶部导航 */
+.nav {
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 10;
+}
+.nav-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand { font-weight: 700; color: #1f2933; }
+.nav-links { display: flex; gap: 20px; font-size: 15px; }
+.nav-links a { color: #475569; }
+
+/* 通用容器 */
+.section {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+.section h2 { font-size: 24px; margin: 0 0 20px; }
+
+/* 首屏 */
+.hero {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.hero h1 { font-size: 36px; margin: 0 0 8px; }
+.tagline { color: #475569; margin: 0 0 20px; }
+.hero-actions { display: flex; gap: 12px; }
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #2563eb;
+}
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1d4ed8; text-decoration: none; }
+.btn-ghost { color: #2563eb; }
+.btn-ghost:hover { background: #eff6ff; text-decoration: none; }
+
+.avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex: 0 0 auto;
+}
+
+/* 卡片 */
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+.card h3 { margin: 0 0 6px; font-size: 18px; }
+.muted { color: #64748b; font-size: 14px; margin: 0 0 8px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 标签 */
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tags li {
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 13px;
+  color: #334155;
+}
+.tags-lg li { font-size: 14px; padding: 6px 14px; }
+
+.footer {
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+  font-size: 14px;
+}
