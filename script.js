@@ -9,4 +9,4 @@ document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 });
 
 document.querySelector('.footer p').textContent =
-  '© ' + new Date().getFullYear() + ' 姓名 · 本页由 AI 辅助开发';
+  '© ' + new Date().getFullYear() + ' 阮耀辉 · 本页由 AI 辅助开发';
